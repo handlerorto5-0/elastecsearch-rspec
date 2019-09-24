@@ -9,6 +9,10 @@ gem 'rails', '~> 6.0.0'
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
+# Elasticsearch integration
+gem 'elasticsearch'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
@@ -28,6 +32,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Test Framework
+  gem 'rspec'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -35,6 +42,10 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # Clean Database between tests
+  gem 'database_cleaner'
+  # Programmatically start and stop ES for tests
+  gem 'elasticsearch-extensions'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
